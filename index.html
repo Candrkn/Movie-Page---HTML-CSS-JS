@@ -18,8 +18,8 @@
 
     <!-- !Fontawsome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- ! External CSS -->
     <link rel="stylesheet" href="style.css">
@@ -42,19 +42,42 @@
         </nav>
 
         <div class="content">
-            <h1 id="title">Money Heist</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat quidem ipsum aperiam dignissimos quod dicta nesciunt, ipsa impedit aut. Placeat saepe et fugiat blanditiis illum reprehenderit est enim laboriosam consectetur.</p>
+            <h1 id="title">John Wick</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat quidem ipsum aperiam dignissimos quod
+                dicta nesciunt, ipsa impedit aut. Placeat saepe et fugiat blanditiis illum reprehenderit est enim
+                laboriosam consectetur.</p>
             <div class="details">
                 <h6>A Netflix Original Film</h6>
                 <h6 id="gen">Thriller</h6>
-                <h6>2021</h6>
-                <h6 id="rate"><span>IMDB</span><i class="bi bi-star-fill">9.6</i></h6>
+                <h6>2022</h6>
+                <h6 id="rate"><span>IMDB</span><i class="bi bi-star-fill">9.8</i></h6>
             </div>
             <div class="btns">
-                <a href="#" id="play">Watch<i class="bi bi-play-fill"></i></a>
-                <a href="#" id="download_main">Download<i class="bi bi-cloud-arrow-down-fill"></i></a>
+                <a href="#" id="play">Watch <i class="bi bi-play-fill"></i></a>
+                <a href="#" id="download_main">Download <i class="bi bi-cloud-arrow-down-fill"></i></a>
             </div>
         </div>
+        
+        <section>
+            <h4>Popular</h4>
+            <i class="fa-solid fa-chevron-left" id="left_btn"></i>
+            <i class="fa-solid fa-chevron-right" id="right_btn"></i>
+            <div class="cards">
+                <!-- <a href="#" class="card" data-video="video/jurassicworld.webm">
+                    <img class="poster" src="img/jurassic world.jpg" alt="">
+                    <div class="rest_card">
+                        <img src="img/jurassic world1.jpg" alt="">
+                        <div class="cont">
+                            <h4>Jurassic World</h4>
+                            <div class="sub">
+                                <p>Action,2022</p>
+                                <h3><span>IMDB</span><i class="fa-solid fa-star"></i>9.6</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a> -->
+            </div>
+        </section>
     </header>
 
 
@@ -65,11 +88,11 @@
 
     <!-- ! AOS Init -->
     <script>
-        AOS.init();
+    AOS.init();
     </script>
 
     <!-- ! External JS -->
-    <script src="script.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 
 </html>
