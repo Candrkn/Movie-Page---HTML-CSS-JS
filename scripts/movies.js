@@ -45,7 +45,15 @@ fetch(topratedFilms)
 
 const printMovieInfo = (data) =>{
     data.results.forEach((veri)=>{
-        const posterPath = veri.poster_path;
+        // const posterPath = veri.poster_path ? `${imageUrl}${veri.poster_path}`: `https://www.reelviews.net/resources/img/default_poster.jpg`
+
+        let posterPath;
+        if(veri.poster_path){
+            posterPath = `${imageUrl}${veri.poster_path}`
+        }else if(veri.poster_path == null || veri.poster_path == ""){
+            posterPath = "https://www.reelviews.net/resources/img/default_poster.jpg"
+        };
+
         const genreNames = veri.genre_ids.map((id) => genresMap[id]).slice(0,2);
         const date = new Date(veri.release_date);
         const formattedDate = date.toLocaleDateString("en-US",{
@@ -57,6 +65,7 @@ const printMovieInfo = (data) =>{
         // Movie-Card
         const movieCard = document.createElement("div");
         movieCard.classList.add("movie-card");
+
         movieCard.id = veri.id;
 
         movieCard.addEventListener("click", function(){
@@ -65,7 +74,7 @@ const printMovieInfo = (data) =>{
 
         // Card Info
         movieCard.innerHTML = `
-        <img src="${imageUrl}${posterPath}" alt="">
+        <img src="${posterPath}" alt="">
         <div class="movie-info">
             <h4>${veri.title}</h4>
             <p>${genreNames}</p>
@@ -125,3 +134,29 @@ const printTopRatedMovies = () => {
         printMovieInfo(data)
     })
 }
+
+// Search Input
+
+const searchInput = document.querySelector("#searchInput");
+
+const movieFilter = () =>{
+    searchInput.addEventListener("input", function(){
+        const searchTerm = searchInput.value.trim();
+
+        if (searchTerm == ""){
+            printMovieInfo(data);
+        }else{
+            fetch(`https://api.themoviedb.org/3/search/movie?query=${searchTerm}&api_key=${apiKey}`)
+            .then(response => response.json())
+            .then((data)=>{
+                console.log(data)
+                moviesWrapper.innerHTML = "";
+                printMovieInfo(data)
+            })
+        }
+
+      
+    })
+}
+
+movieFilter();
