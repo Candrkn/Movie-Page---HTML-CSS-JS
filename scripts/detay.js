@@ -38,7 +38,7 @@ const showMovieInfo = (data) => {
 
     filmWrapper.innerHTML = `
     <div class="film-detay">
-        <img src="${posterPath}" alt="">
+        <img class="detay-foto" src="${posterPath}" alt="">
         <div class="film-bilgileri">
             <h2>${data.title}</h2>
             <p><strong>Categorie:</strong>${genreNames}</p>

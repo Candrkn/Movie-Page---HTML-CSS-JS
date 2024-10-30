@@ -132,3 +132,20 @@ const backGround = (data) => {
     
 
 }
+
+// ! Navbar
+
+const hamburger = document.querySelector("#hamburger");
+const menu = document.querySelector("#menu");
+
+let isMenuOpen = false;
+
+hamburger.addEventListener("click",function(){
+    if(!isMenuOpen){
+        menu.classList.add("show");
+    }else{
+        menu.classList.remove("show");
+    }
+
+    isMenuOpen = !isMenuOpen;
+})

@@ -37,6 +37,10 @@ const diziBilgileriniGoster = (data) => {
         serieCard.classList.add("serie-card");
         serieCard.id = veri.id;
 
+        serieCard.addEventListener("click",function(){
+            window.location.href = `series-detay.html?id=${serieCard.id}`
+        })
+
         const date = new Date(veri.first_air_date)
         const formattedDate = date.toLocaleDateString("tr-TR", {
             day:"numeric",

@@ -98,6 +98,8 @@ header nav .logo_ul .movies-list{
     color: white;
     opacity: 0;
     position: absolute;
+    top: 40px;
+    left: 300px;
     background-color: black;
     z-index: 10;
     padding: 5px;
@@ -181,6 +183,7 @@ header .content p{
 
 header .content .details{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 10px;
     gap: 10px;
@@ -188,6 +191,7 @@ header .content .details{
 
 header .content .details h6:nth-child(1){
     color: rgb(255, 255, 255, 0.7);
+
 }
 
 header .content .details h6:nth-child(2){
@@ -508,9 +512,48 @@ header section:hover .fa-chevron-right{
     transition: transform 0.5s ease;
 }
 
+/* ! Movie Page Responsive */
+
+@media screen and (max-width:1150px){
+    .movies-content .popular .movie-card,
+    .series-content .popular .serie-card{
+        width: 30%;
+    }
+}
+
+
+@media screen and (max-width:923px){
+    .movies-content .popular .movie-card,
+    .series-content .popular .serie-card{
+        width: 40%;
+    }
+
+    .movies-content .popular .movie-card .movie-info p,
+    .series-content .popular .serie-card .serie-info p{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width:700px){
+    .movies-content .popular .movie-card,
+    .series-content .popular .serie-card{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:530px){
+    .movies-content .popular .movie-card,
+    .series-content .popular .serie-card{
+        width: 80%;
+    }
+}
+
 /* ! Detay page  */
 
-.detay-body{
+.detay-body,
+.series-body{
     width: 100%;
     background: black;
     font-family: "Poppins", sans-serif;
@@ -520,7 +563,8 @@ header section:hover .fa-chevron-right{
     padding-top: 50px;
 }
 
-.detay-body header{
+.detay-body header,
+.series-body header{
     position: relative;
     width: 80%;
     border: 1px solid white;
@@ -528,17 +572,24 @@ header section:hover .fa-chevron-right{
     overflow: hidden;
 }
 
-.detay-body header .film-detay-wrapper .film-detay{
+.detay-body header .film-detay-wrapper .film-detay,
+.series-body header .serie-detay-wrapper .serie-detay{
     display: flex;
     justify-content: space-between;
     color: white;
 }
 
-.detay-body header .film-detay-wrapper .film-detay .film-bilgileri{
+.detay-body header .film-detay-wrapper .film-detay .detay-foto{
+    width: 100%;
+}
+
+.detay-body header .film-detay-wrapper .film-detay .film-bilgileri,
+.series-body header .serie-detay-wrapper .serie-detay .film-bilgileri{
     margin: 50px 20px;
 }
 
-.detay-body header .film-detay-wrapper .film-detay .film-bilgileri h2{
+.detay-body header .film-detay-wrapper .film-detay .film-bilgileri h2,
+.series-body header .serie-detay-wrapper .serie-detay .film-bilgileri h2{
     font-size: 45px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -546,17 +597,20 @@ header section:hover .fa-chevron-right{
     margin-bottom: 10px;
 }
 
-.detay-body header .film-detay-wrapper .film-detay .film-bilgileri strong{
+.detay-body header .film-detay-wrapper .film-detay .film-bilgileri strong,
+.series-body header .serie-detay-wrapper .serie-detay .film-bilgileri strong{
     color: wheat;
     margin-right: 10px;
 }
 
-.detay-body header .film-detay-wrapper .film-detay .film-bilgileri p{
+.detay-body header .film-detay-wrapper .film-detay .film-bilgileri p,
+.series-body header .serie-detay-wrapper .serie-detay .film-bilgileri p{
     font-style: italic;
     margin: 10px 0px;
 }
 
-.detay-body header .film-detay-wrapper .film-detay .fragman-izle-btn{
+.detay-body header .film-detay-wrapper .film-detay .fragman-izle-btn,
+.series-body header .serie-detay-wrapper .serie-detay .fragman-izle-btn{
     color: black;
     background-color: white;
     border: none;
@@ -565,11 +619,13 @@ header section:hover .fa-chevron-right{
     transition: all 0.3s linear;
 }
 
-.detay-body header .film-detay-wrapper .film-detay .fragman-izle-btn:hover{
+.detay-body header .film-detay-wrapper .film-detay .fragman-izle-btn:hover,
+.series-body header .serie-detay-wrapper .serie-detay .fragman-izle-btn:hover{
     transform: scale(0.9);
 }
 
-.detay-body .oyuncular-wrapper{
+.detay-body .oyuncular-wrapper,
+.series-body .oyuncular-wrapper{
     padding-inline: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -578,8 +634,9 @@ header section:hover .fa-chevron-right{
     gap: 10px;
 }
 
-.detay-body .oyuncular-wrapper .oyuncu-card{
-    width: 24%;
+.detay-body .oyuncular-wrapper .oyuncu-card,
+.series-body .oyuncular-wrapper .oyuncu-card{
+    width: 15%;
     height: 480px;
     color: white;
     margin-bottom: 20px;
@@ -589,16 +646,20 @@ header section:hover .fa-chevron-right{
     text-align: center;
 }
 
-.detay-body .oyuncular-wrapper .oyuncu-card img{
+.detay-body .oyuncular-wrapper .oyuncu-card img,
+.series-body .oyuncular-wrapper .oyuncu-card img{
     width: 100%;
+    height: 300px;
 }
 
-.detay-body .oyuncular-wrapper .oyuncu-card strong{
+.detay-body .oyuncular-wrapper .oyuncu-card strong,
+.series-body .oyuncular-wrapper .oyuncu-card strong{
     color: wheat;
     margin-right: 10px;
 }
 
-.detay-body h3{
+.detay-body h3,
+.series-body h3{
     color: white;
     text-align: center;
     font-size: 35px;
@@ -606,4 +667,157 @@ header section:hover .fa-chevron-right{
     background: linear-gradient(45deg,darkred,white);
     letter-spacing: 2px;
     margin-bottom: 20px;
+}
+
+/* ! Navbar Responsive */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo_ul{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+#menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu.show{
+    display: flex;
+}
+
+li{
+    margin-right: 20px;
+}
+
+.movies-list{
+    display: none;
+}
+
+.hamburger{
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+}
+
+@media screen and (max-width:700px){
+
+    #menu{
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        background-color: gray;
+        text-align: center;
+        padding: 10px 0;
+        transition: all 0.3s ease;
+        z-index: 1;
+        display: none;
+        margin-top: 20px;
+    }
+
+    #menu li{
+        margin: 10px 0;
+    }
+
+    .hamburger{
+       display: block;
+    }
+
+    header nav .logo_ul img{
+        width: 100%;
+    }
+
+    .logo_ul{
+        width: 40%;
+        text-align: center;
+    }
+
+}
+
+/* ! Mainpage Content area */  
+
+@media screen and (max-width:1280px){
+    header .content p{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:700px){
+    header .content p{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:385px){
+    header .content{
+        padding-inline: 10px;
+    }
+
+    header .content p{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:426px){
+    header .content .details h6:nth-child(1){
+        width: 100%;
+    }
+}
+
+/* ! Details Responsive */
+
+@media screen and (max-width:1000px){
+    .detay-body header .film-detay-wrapper .film-detay .detay-foto,
+    .series-body header .serie-detay-wrapper .serie-detay .detay-foto{
+        width: 350px;
+    
+    }
+    
+}
+
+@media screen and (max-width:969px){
+    .detay-body header .film-detay-wrapper .film-detay .film-bilgileri h2,
+    .series-body header .serie-detay-wrapper .serie-detay .film-bilgileri h2{
+        font-size: 35px;
+    }
+
+    .detay-body header .film-detay-wrapper .film-detay .film-bilgileri p,
+    .series-body header .serie-detay-wrapper .serie-detay .film-bilgileri p{
+    font-style: italic;
+    margin: 10px 0px;
+    text-align: justify;
+}
+    
+}
+
+@media screen and (max-width:841px){
+   
+    .detay-body header .film-detay-wrapper .film-detay,
+    .series-body header .serie-detay-wrapper .serie-detay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    }
+
+    .detay-body header .film-detay-wrapper .film-detay .detay-foto,
+    .series-body header .serie-detay-wrapper .serie-detay .detay-foto{
+        width: 100%;
+        height: 500px;
+    
+    }
 }
